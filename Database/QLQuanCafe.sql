@@ -15,7 +15,7 @@ CREATE TABLE Ban
 (
 	MaBan nvarchar(10) PRIMARY KEY,
 	TenBan NVARCHAR(100) NOT NULL DEFAULT N'Bàn chưa có tên',
-	TrangThai NVARCHAR(100) NOT NULL DEFAULT N'Trống'	-- Trống || Có người || Đặt trước
+	TrangThai NVARCHAR(100) NOT NULL DEFAULT N'Trống'	-- Trống || Có người 
 )
 GO
 
@@ -46,17 +46,15 @@ CREATE TABLE ThucPham
 )
 GO
 
-CREATE TABLE HoaDon
-(
-	MaHoaDon nvarchar(10) PRIMARY KEY,
-	NgayCheckIn DATE NOT NULL DEFAULT GETDATE(),
-	NgayCheckOut DATE,
-	MaBan nvarchar(10) NOT NULL,
-	TrangThai INT NOT NULL DEFAULT 0 -- 1: đã thanh toán && 0: chưa thanh toán
-	
-	FOREIGN KEY (MaBan) REFERENCES dbo.Ban(MaBan)
-)
-GO
+CREATE TABLE HoaDon (
+    MaHoaDon NVARCHAR(10) PRIMARY KEY,       -- Mã hóa đơn
+    MaBan NVARCHAR(10) NOT NULL,             -- Bàn được sử dụng
+    TongTien FLOAT NOT NULL DEFAULT 0,       -- Tổng tiền
+    NgayCheckIn DATE NOT NULL GETDATE(),               -- Ngày check-in
+    NgayCheckOut DATE,                       -- Ngày check-out (có thể NULL nếu chưa thanh toán)
+    FOREIGN KEY (MaBan) REFERENCES Ban(MaBan) -- Liên kết với bảng Ban
+);
+
 
 CREATE TABLE ChiTietHoaDon
 (
@@ -142,13 +140,13 @@ VALUES
 ('TP007', N'Bánh Cheesecake', 'DM003', 70000);   -- Món tráng miệng
 GO
 
-INSERT INTO HoaDon (MaHoaDon, NgayCheckIn, NgayCheckOut, MaBan, TrangThai)
+INSERT INTO HoaDon (MaHoaDon, NgayCheckIn, NgayCheckOut, MaBan, TongTien)
 VALUES
-('HD001', '2025-03-18', '2025-03-18', 'B001', 1),
-('HD002', '2025-03-18', '2025-03-18', 'B002', 1),
-('HD003', '2025-03-17', '2025-03-17', 'B003', 1),
-('HD004', '2025-03-18', '2025-03-18', 'B004', 1),
-('HD005', '2025-03-16', '2025-03-16', 'B005', 1);
+('HD001', '2025-03-18', '2025-03-18', 'B001', 150000),
+('HD002', '2025-03-18', '2025-03-18', 'B002', 200000),
+('HD003', '2025-03-17', '2025-03-17', 'B003', 180000),
+('HD004', '2025-03-18', '2025-03-18', 'B004', 220000),
+('HD005', '2025-03-16', '2025-03-16', 'B005', 250000);
 GO
 
 INSERT INTO ChiTietHoaDon (MaCT, MaHoaDon, MaThucPham, SoLuong)

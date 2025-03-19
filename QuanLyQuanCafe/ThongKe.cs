@@ -31,15 +31,14 @@ namespace QuanLyQuanCafe
                     conn.Open();
                 }
 
-                
-
                 string query = @"
-                    SELECT hd.NgayCheckIn, hd.NgayCheckOut, b.TenBan, tp.Gia
+                    SELECT hd.NgayCheckIn, hd.NgayCheckOut, b.TenBan, hd.TongTien
                     FROM dbo.ChiTietHoaDon cthd
                     JOIN dbo.HoaDon hd ON cthd.MaHoaDon = hd.MaHoaDon
                     JOIN dbo.Ban b ON hd.MaBan = b.MaBan
                     JOIN dbo.ThucPham tp ON cthd.MaThucPham = tp.MaThucPham
-                    WHERE hd.NgayCheckIn >= @FromDate AND hd.NgayCheckOut <= @ToDate";
+                    WHERE hd.NgayCheckIn >= @FromDate AND hd.NgayCheckOut <= @ToDate
+                    GROUP BY hd.NgayCheckIn, hd.NgayCheckOut, b.TenBan, hd.TongTien";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@FromDate", fromDate);
                 cmd.Parameters.AddWithValue("@ToDate", toDate);
@@ -77,13 +76,16 @@ namespace QuanLyQuanCafe
             {
                 ThongKeReport report = new ThongKeReport();
                 using (SqlCommand cmd = new SqlCommand(@"
-                    SELECT hd.NgayCheckIn, hd.NgayCheckOut, b.TenBan, tp.Gia
+                    SELECT hd.NgayCheckIn, hd.NgayCheckOut, b.TenBan, hd.TongTien
                     FROM dbo.ChiTietHoaDon cthd
                     JOIN dbo.HoaDon hd ON cthd.MaHoaDon = hd.MaHoaDon
                     JOIN dbo.Ban b ON hd.MaBan = b.MaBan
-                    JOIN dbo.ThucPham tp ON cthd.MaThucPham = tp.MaThucPham", conn))
+                    JOIN dbo.ThucPham tp ON cthd.MaThucPham = tp.MaThucPham
+                    WHERE hd.NgayCheckIn >= @FromDate AND hd.NgayCheckOut <= @ToDate
+                    GROUP BY hd.NgayCheckIn, hd.NgayCheckOut, b.TenBan, hd.TongTien", conn))
                 {
-                    
+                    cmd.Parameters.AddWithValue("@FromDate", dateTimePicker_CheckIn.Value);
+                    cmd.Parameters.AddWithValue("@ToDate", dateTimePicker_CheckOut.Value);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     da.Fill(ds, "ThongKe");

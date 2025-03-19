@@ -89,6 +89,12 @@
     <Compile Include="frmTableNhanVien.Designer.cs">
       <DependentUpon>frmTableNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="MuaHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MuaHang.Designer.cs">
+      <DependentUpon>MuaHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTableNhanVien.resx">
       <DependentUpon>frmTableNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MuaHang.resx">
+      <DependentUpon>MuaHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
