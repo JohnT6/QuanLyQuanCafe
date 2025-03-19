@@ -7,14 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace QuanLyQuanCafe
 {
     public partial class frmTableNhanVien: Form
     {
-        public frmTableNhanVien()
+        public frmTableNhanVien(string TenHienThi)
         {
             InitializeComponent();
+            label_Name.Text = TenHienThi;
         }
 
         private Form activeform = null;

@@ -35,7 +35,10 @@ namespace QuanLyQuanCafe
                 return;
             }
 
-            int? loaiTaiKhoan = ValidateLogin(TenTaiKhoan, MatKhau);
+            var loginResult = ValidateLogin(TenTaiKhoan, MatKhau);
+            int? loaiTaiKhoan = loginResult.loaiTaiKhoan;
+            string tenHienThi = loginResult.tenHienThi;
+
             if (loaiTaiKhoan.HasValue)
             {
                 if (loaiTaiKhoan.Value == 1)
@@ -47,7 +50,7 @@ namespace QuanLyQuanCafe
                 }
                 else if (loaiTaiKhoan.Value == 0)
                 {
-                    frmTableNhanVien frmTableNhanVien = new frmTableNhanVien();
+                    frmTableNhanVien frmTableNhanVien = new frmTableNhanVien(tenHienThi);
                     this.Hide();
                     frmTableNhanVien.ShowDialog();
                     this.Show();
@@ -59,7 +62,7 @@ namespace QuanLyQuanCafe
             }
         }
 
-        private int? ValidateLogin(string TenTaiKhoan, string MatKhau)
+        private (int? loaiTaiKhoan, string tenHienThi) ValidateLogin(string TenTaiKhoan, string MatKhau)
         {
             try
             {
@@ -68,27 +71,31 @@ namespace QuanLyQuanCafe
                     conn.Open();
                 }
 
-                string query = "SELECT LoaiTaiKhoan FROM dbo.TaiKhoan WHERE TenTaiKhoan = @TenTaiKhoan AND MatKhau = @MatKhau";
+                string query = "SELECT LoaiTaiKhoan, TenHienThi FROM dbo.TaiKhoan WHERE TenTaiKhoan = @TenTaiKhoan AND MatKhau = @MatKhau";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@TenTaiKhoan", TenTaiKhoan);
                     cmd.Parameters.AddWithValue("@MatKhau", MatKhau);
 
-                    object result = cmd.ExecuteScalar();
-                    if (result != null)
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        return Convert.ToInt32(result);
-                    }
-                    else
-                    {
-                        return null;
+                        if (reader.Read())
+                        {
+                            int loaiTaiKhoan = reader.GetInt32(0);
+                            string tenHienThi = reader.GetString(1);
+                            return (loaiTaiKhoan, tenHienThi);
+                        }
+                        else
+                        {
+                            return (null, null);
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
+                return (null, null);
             }
             finally
             {
