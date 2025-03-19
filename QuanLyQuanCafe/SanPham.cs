@@ -469,5 +469,42 @@ namespace QuanLyQuanCafe
                 MessageBox.Show("Lỗi khi tải báo cáo: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btn_timkiem_SP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
+
+                string searchTerm = txtBox_TimKiem.Text;
+
+                if (string.IsNullOrEmpty(searchTerm))
+                {
+                    LoadDanhSachThucPham();
+                    return;
+                }
+
+                string query = "SELECT tp.MaThucPham, tp.TenThucPham, tp.Gia, dm.TenDanhMuc FROM dbo.ThucPham tp JOIN dbo.DanhMuc dm ON tp.MaDanhMuc = dm.MaDanhMuc WHERE tp.TenThucPham LIKE @searchTerm";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@searchTerm", "%" + searchTerm + "%");
+
+                DataTable dtThucPham = new DataTable();
+                SqlDataAdapter daThucPham = new SqlDataAdapter(cmd);
+                daThucPham.Fill(dtThucPham);
+                dgv_ThucPham.DataSource = dtThucPham;
+
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tìm kiếm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

@@ -52,7 +52,6 @@
             this.btn_Them_SP = new System.Windows.Forms.Button();
             this.panel_DienThoai = new System.Windows.Forms.Panel();
             this.lb_them_DT = new System.Windows.Forms.Label();
-            this.btn_timkiem_DT = new System.Windows.Forms.Button();
             this.txtBox_giaThucPham = new System.Windows.Forms.TextBox();
             this.comboBox_danhMucMonAnThucUong = new System.Windows.Forms.ComboBox();
             this.txtBox_tenThucPham = new System.Windows.Forms.TextBox();
@@ -62,6 +61,8 @@
             this.label_MaMATU = new System.Windows.Forms.Label();
             this.label__DanhMuc = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtBox_TimKiem = new System.Windows.Forms.TextBox();
+            this.btn_timkiem_SP = new System.Windows.Forms.Button();
             this.tabControl_sub_SanPham.SuspendLayout();
             this.tabPage_hangdienthoai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DMSP)).BeginInit();
@@ -359,8 +360,9 @@
             // 
             // panel_DienThoai
             // 
+            this.panel_DienThoai.Controls.Add(this.txtBox_TimKiem);
             this.panel_DienThoai.Controls.Add(this.lb_them_DT);
-            this.panel_DienThoai.Controls.Add(this.btn_timkiem_DT);
+            this.panel_DienThoai.Controls.Add(this.btn_timkiem_SP);
             this.panel_DienThoai.Controls.Add(this.txtBox_giaThucPham);
             this.panel_DienThoai.Controls.Add(this.comboBox_danhMucMonAnThucUong);
             this.panel_DienThoai.Controls.Add(this.txtBox_tenThucPham);
@@ -385,15 +387,6 @@
             this.lb_them_DT.Name = "lb_them_DT";
             this.lb_them_DT.Size = new System.Drawing.Size(0, 22);
             this.lb_them_DT.TabIndex = 24;
-            // 
-            // btn_timkiem_DT
-            // 
-            this.btn_timkiem_DT.BackColor = System.Drawing.Color.White;
-            this.btn_timkiem_DT.Location = new System.Drawing.Point(531, 113);
-            this.btn_timkiem_DT.Name = "btn_timkiem_DT";
-            this.btn_timkiem_DT.Size = new System.Drawing.Size(46, 40);
-            this.btn_timkiem_DT.TabIndex = 23;
-            this.btn_timkiem_DT.UseVisualStyleBackColor = false;
             // 
             // txtBox_giaThucPham
             // 
@@ -483,6 +476,26 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "DANH SÁCH MÓN ĂN, THỨC UỐNG";
             // 
+            // txtBox_TimKiem
+            // 
+            this.txtBox_TimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(41)))), ((int)(((byte)(29)))));
+            this.txtBox_TimKiem.Location = new System.Drawing.Point(452, 58);
+            this.txtBox_TimKiem.Name = "txtBox_TimKiem";
+            this.txtBox_TimKiem.Size = new System.Drawing.Size(255, 39);
+            this.txtBox_TimKiem.TabIndex = 25;
+            // 
+            // btn_timkiem_SP
+            // 
+            this.btn_timkiem_SP.BackColor = System.Drawing.Color.White;
+            this.btn_timkiem_SP.BackgroundImage = global::QuanLyQuanCafe.Properties.Resources.search;
+            this.btn_timkiem_SP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_timkiem_SP.Location = new System.Drawing.Point(727, 54);
+            this.btn_timkiem_SP.Name = "btn_timkiem_SP";
+            this.btn_timkiem_SP.Size = new System.Drawing.Size(46, 46);
+            this.btn_timkiem_SP.TabIndex = 23;
+            this.btn_timkiem_SP.UseVisualStyleBackColor = false;
+            this.btn_timkiem_SP.Click += new System.EventHandler(this.btn_timkiem_SP_Click);
+            // 
             // SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -532,7 +545,7 @@
         private System.Windows.Forms.Button btn_Them_SP;
         private System.Windows.Forms.Panel panel_DienThoai;
         private System.Windows.Forms.Label lb_them_DT;
-        private System.Windows.Forms.Button btn_timkiem_DT;
+        private System.Windows.Forms.Button btn_timkiem_SP;
         private System.Windows.Forms.TextBox txtBox_giaThucPham;
         private System.Windows.Forms.ComboBox comboBox_danhMucMonAnThucUong;
         private System.Windows.Forms.TextBox txtBox_tenThucPham;
@@ -542,5 +555,6 @@
         private System.Windows.Forms.Label label_MaMATU;
         private System.Windows.Forms.Label label__DanhMuc;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtBox_TimKiem;
     }
 }
