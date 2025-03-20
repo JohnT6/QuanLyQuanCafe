@@ -109,11 +109,6 @@
       <DependentUpon>BanReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Report\BanReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BanReport.rpt</DependentUpon>
-    </Compile>
     <Compile Include="Report\DanhMucReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
