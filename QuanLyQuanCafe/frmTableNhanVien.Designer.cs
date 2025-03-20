@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTableNhanVien));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnMuaHang = new System.Windows.Forms.Button();
@@ -151,6 +152,7 @@
             this.Controls.Add(this.panelChildForm_AD);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel6);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTableNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bảng Nhân Viên";

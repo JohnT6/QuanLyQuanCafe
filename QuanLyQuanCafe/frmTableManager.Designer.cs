@@ -28,24 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTableManager));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panelSlide = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panelChildForm_AD = new System.Windows.Forms.Panel();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.btnBan = new System.Windows.Forms.Button();
             this.btnSanPham = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelSlide = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelChildForm_AD = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -61,61 +62,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(223, 716);
             this.panel2.TabIndex = 3;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(223, 200);
-            this.panel4.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(41)))), ((int)(((byte)(29)))));
-            this.label1.Location = new System.Drawing.Point(60, 138);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 23);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Admin";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.panelSlide);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 716);
-            this.panel3.TabIndex = 2;
-            // 
-            // panelSlide
-            // 
-            this.panelSlide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(41)))), ((int)(((byte)(29)))));
-            this.panelSlide.Location = new System.Drawing.Point(3, 200);
-            this.panelSlide.Name = "panelSlide";
-            this.panelSlide.Size = new System.Drawing.Size(10, 45);
-            this.panelSlide.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panelChildForm_AD);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(233, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1236, 716);
-            this.panel1.TabIndex = 4;
-            // 
-            // panelChildForm_AD
-            // 
-            this.panelChildForm_AD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm_AD.Location = new System.Drawing.Point(0, 0);
-            this.panelChildForm_AD.Name = "panelChildForm_AD";
-            this.panelChildForm_AD.Size = new System.Drawing.Size(1236, 716);
-            this.panelChildForm_AD.TabIndex = 0;
             // 
             // btnDangXuat
             // 
@@ -198,6 +144,27 @@
             this.btnSanPham.UseVisualStyleBackColor = true;
             this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(223, 200);
+            this.panel4.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(41)))), ((int)(((byte)(29)))));
+            this.label1.Location = new System.Drawing.Point(60, 138);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 23);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Admin";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QuanLyQuanCafe.Properties.Resources.logo;
@@ -208,6 +175,40 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panelSlide);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(10, 716);
+            this.panel3.TabIndex = 2;
+            // 
+            // panelSlide
+            // 
+            this.panelSlide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(41)))), ((int)(((byte)(29)))));
+            this.panelSlide.Location = new System.Drawing.Point(3, 200);
+            this.panelSlide.Name = "panelSlide";
+            this.panelSlide.Size = new System.Drawing.Size(10, 45);
+            this.panelSlide.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panelChildForm_AD);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(233, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1236, 716);
+            this.panel1.TabIndex = 4;
+            // 
+            // panelChildForm_AD
+            // 
+            this.panelChildForm_AD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm_AD.Location = new System.Drawing.Point(0, 0);
+            this.panelChildForm_AD.Name = "panelChildForm_AD";
+            this.panelChildForm_AD.Size = new System.Drawing.Size(1236, 716);
+            this.panelChildForm_AD.TabIndex = 0;
+            // 
             // frmTableManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -216,6 +217,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTableManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Quán Coffee";
@@ -223,9 +225,9 @@
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

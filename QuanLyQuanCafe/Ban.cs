@@ -22,6 +22,25 @@ namespace QuanLyQuanCafe
             conn = DatabaseConnection.GetConnection();
             LoadDanhSachBan();
             LoadTrangThaiComboBox();
+            CustomizeDataGridViewHeaders();
+        }
+
+        private void CustomizeDataGridViewHeaders()
+        {
+            dgv_Ban.Columns[0].HeaderText = "Mã Bàn";
+            dgv_Ban.Columns[1].HeaderText = "Tên Bàn";
+            dgv_Ban.Columns[2].HeaderText = "Trạng Thái";
+
+            // Customize phần Header của dgv_Ban
+            dgv_Ban.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#44291d");
+            dgv_Ban.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv_Ban.EnableHeadersVisualStyles = false;
+
+            // Cho thanh cuộn xuất hiện khi cần thiết
+            dgv_Ban.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_Ban.ScrollBars = ScrollBars.Both;
+
+           
         }
 
         private void LoadDanhSachBan()

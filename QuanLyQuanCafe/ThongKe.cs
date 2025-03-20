@@ -20,6 +20,27 @@ namespace QuanLyQuanCafe
         {
             InitializeComponent();
             conn = DatabaseConnection.GetConnection();
+            
+        }
+
+        private void CustomizeDataGridViewHeaders()
+        {
+            dgv_ThongKe.Columns[0].HeaderText = "Ngày Check In";
+            dgv_ThongKe.Columns[1].HeaderText = "Ngày Check Out";
+            dgv_ThongKe.Columns[2].HeaderText = "Tên Bàn";
+            dgv_ThongKe.Columns[3].HeaderText = "Thành Tiền";
+
+
+            // Customize phần Header của dgv_Ban
+            dgv_ThongKe.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#44291d");
+            dgv_ThongKe.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv_ThongKe.EnableHeadersVisualStyles = false;
+
+            // Cho thanh cuộn xuất hiện khi cần thiết
+            dgv_ThongKe.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_ThongKe.ScrollBars = ScrollBars.Both;
+
+
         }
 
         private void LoadThongKe(DateTime fromDate, DateTime toDate)
@@ -47,10 +68,7 @@ namespace QuanLyQuanCafe
                 daThongKe.Fill(dtThongKe);
                 dgv_ThongKe.DataSource = dtThongKe;
 
-                dgv_ThongKe.Columns[0].HeaderText = "Ngày Check In";
-                dgv_ThongKe.Columns[1].HeaderText = "Ngày Check Out";
-                dgv_ThongKe.Columns[2].HeaderText = "Tên Bàn";
-                dgv_ThongKe.Columns[3].HeaderText = "Thành Tiền";
+                CustomizeDataGridViewHeaders();
 
                 if (conn.State == ConnectionState.Open)
                 {

@@ -25,6 +25,41 @@ namespace QuanLyQuanCafe
             InitializeComponent();
             conn = DatabaseConnection.GetConnection();
             LoadDanhSach();
+            CustomizeDataGridViewHeaders();
+        }
+
+        private void CustomizeDataGridViewHeaders()
+        {
+            dgv_NV.Columns[0].HeaderText = "Mã Nhân Viên";
+            dgv_NV.Columns[1].HeaderText = "Tên Nhân Viên";
+            dgv_NV.Columns[2].HeaderText = "Giới Tính";
+            dgv_NV.Columns[3].HeaderText = "Số Điện Thoại";
+            dgv_NV.Columns[4].HeaderText = "Địa Chỉ";
+            dgv_NV.Columns[5].HeaderText = "Email";
+            dgv_NV.Columns[6].HeaderText = "Chức Vụ";
+
+            // Customize phần Header của dgv_NV
+            dgv_NV.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#44291d");
+            dgv_NV.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv_NV.EnableHeadersVisualStyles = false;
+
+            // Cho thanh cuộn xuất hiện khi cần thiết
+            dgv_NV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_NV.ScrollBars = ScrollBars.Both;
+
+            dgvTaiKhoan.Columns[0].HeaderText = "Tên Tài Khoản";
+            dgvTaiKhoan.Columns[1].HeaderText = "Tên Nhân Viên";
+            dgvTaiKhoan.Columns[2].HeaderText = "Mật Khẩu";
+            dgvTaiKhoan.Columns[3].HeaderText = "Loại Tài Khoản";
+
+            // Customize phần Header của dgvTaiKhoan
+            dgvTaiKhoan.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#44291d");
+            dgvTaiKhoan.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvTaiKhoan.EnableHeadersVisualStyles = false; 
+
+            
+            dgvTaiKhoan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvTaiKhoan.ScrollBars = ScrollBars.Both;
         }
 
         private void LoadDanhSach()
@@ -478,5 +513,7 @@ namespace QuanLyQuanCafe
                 txtBox_chucvu_NV.Text = row.Cells["ChucVu"].Value.ToString();
             }
         }
+
+        
     }
 }

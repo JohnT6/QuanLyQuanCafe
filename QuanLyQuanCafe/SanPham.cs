@@ -23,6 +23,36 @@ namespace QuanLyQuanCafe
             LoadDanhSachDanhMuc();
             LoadDanhSachThucPham();
             LoadDanhMucComboBox();
+            CustomizeDataGridViewHeaders();
+        }
+
+        private void CustomizeDataGridViewHeaders()
+        {
+            dgv_DMSP.Columns[0].HeaderText = "Mã Danh Mục";
+            dgv_DMSP.Columns[1].HeaderText = "Tên Danh Mục";
+
+            // Customize phần Header của dgv_DMSP
+            dgv_DMSP.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#44291d");
+            dgv_DMSP.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv_DMSP.EnableHeadersVisualStyles = false;
+
+            // Cho thanh cuộn xuất hiện khi cần thiết
+            dgv_DMSP.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_DMSP.ScrollBars = ScrollBars.Both;
+
+            dgv_ThucPham.Columns[0].HeaderText = "Mã Thực Phẩm";
+            dgv_ThucPham.Columns[1].HeaderText = "Tên Thực Phẩm";
+            dgv_ThucPham.Columns[2].HeaderText = "Mã Danh Mục";
+            dgv_ThucPham.Columns[3].HeaderText = "Giá";
+
+            // Customize phần Header của dgv_ThucPham
+            dgv_ThucPham.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#44291d");
+            dgv_ThucPham.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv_ThucPham.EnableHeadersVisualStyles = false;
+
+
+            dgv_ThucPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_ThucPham.ScrollBars = ScrollBars.Both;
         }
 
         private void LoadDanhSachDanhMuc()

@@ -109,6 +109,11 @@
       <DependentUpon>BanReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report\BanReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BanReport.rpt</DependentUpon>
+    </Compile>
     <Compile Include="Report\DanhMucReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -185,7 +190,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\BanReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>BanReport.cs</LastGenOutput>
+      <LastGenOutput>BanReport1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\DanhMucReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

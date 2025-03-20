@@ -37,6 +37,10 @@
             this.btn_xem_NV = new System.Windows.Forms.Button();
             this.btn_them_NV = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtBox_chucvu_NV = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtBox_email_NV = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.MTBox_sdt_NV = new System.Windows.Forms.MaskedTextBox();
             this.lb_them_NV = new System.Windows.Forms.Label();
             this.txtBox_diachi_NV = new System.Windows.Forms.TextBox();
@@ -83,10 +87,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtBox_email_NV = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.txtBox_chucvu_NV = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
             this.tabControl_Main.SuspendLayout();
             this.tabPage_nhanvien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NV)).BeginInit();
@@ -236,6 +236,44 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1292, 335);
             this.panel2.TabIndex = 2;
+            // 
+            // txtBox_chucvu_NV
+            // 
+            this.txtBox_chucvu_NV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(41)))), ((int)(((byte)(29)))));
+            this.txtBox_chucvu_NV.Location = new System.Drawing.Point(771, 85);
+            this.txtBox_chucvu_NV.Name = "txtBox_chucvu_NV";
+            this.txtBox_chucvu_NV.Size = new System.Drawing.Size(185, 39);
+            this.txtBox_chucvu_NV.TabIndex = 20;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(195)))), ((int)(((byte)(189)))));
+            this.label26.Location = new System.Drawing.Point(665, 95);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(76, 22);
+            this.label26.TabIndex = 19;
+            this.label26.Text = "Chức vụ";
+            // 
+            // txtBox_email_NV
+            // 
+            this.txtBox_email_NV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(41)))), ((int)(((byte)(29)))));
+            this.txtBox_email_NV.Location = new System.Drawing.Point(359, 257);
+            this.txtBox_email_NV.Name = "txtBox_email_NV";
+            this.txtBox_email_NV.Size = new System.Drawing.Size(216, 39);
+            this.txtBox_email_NV.TabIndex = 18;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(195)))), ((int)(((byte)(189)))));
+            this.label25.Location = new System.Drawing.Point(253, 267);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(57, 22);
+            this.label25.TabIndex = 17;
+            this.label25.Text = "Email";
             // 
             // MTBox_sdt_NV
             // 
@@ -735,44 +773,6 @@
             this.label16.Size = new System.Drawing.Size(272, 26);
             this.label16.TabIndex = 0;
             this.label16.Text = "DANH SÁCH TÀI KHOẢN";
-            // 
-            // txtBox_email_NV
-            // 
-            this.txtBox_email_NV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(41)))), ((int)(((byte)(29)))));
-            this.txtBox_email_NV.Location = new System.Drawing.Point(359, 257);
-            this.txtBox_email_NV.Name = "txtBox_email_NV";
-            this.txtBox_email_NV.Size = new System.Drawing.Size(216, 39);
-            this.txtBox_email_NV.TabIndex = 18;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(195)))), ((int)(((byte)(189)))));
-            this.label25.Location = new System.Drawing.Point(253, 267);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(57, 22);
-            this.label25.TabIndex = 17;
-            this.label25.Text = "Email";
-            // 
-            // txtBox_chucvu_NV
-            // 
-            this.txtBox_chucvu_NV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(41)))), ((int)(((byte)(29)))));
-            this.txtBox_chucvu_NV.Location = new System.Drawing.Point(771, 85);
-            this.txtBox_chucvu_NV.Name = "txtBox_chucvu_NV";
-            this.txtBox_chucvu_NV.Size = new System.Drawing.Size(185, 39);
-            this.txtBox_chucvu_NV.TabIndex = 20;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(195)))), ((int)(((byte)(189)))));
-            this.label26.Location = new System.Drawing.Point(665, 95);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(76, 22);
-            this.label26.TabIndex = 19;
-            this.label26.Text = "Chức vụ";
             // 
             // NhanVien
             // 

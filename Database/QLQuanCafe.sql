@@ -50,7 +50,7 @@ CREATE TABLE HoaDon (
     MaHoaDon NVARCHAR(10) PRIMARY KEY,       -- Mã hóa đơn
     MaBan NVARCHAR(10) NOT NULL,             -- Bàn được sử dụng
     TongTien FLOAT NOT NULL DEFAULT 0,       -- Tổng tiền
-    NgayCheckIn DATE NOT NULL GETDATE(),               -- Ngày check-in
+    NgayCheckIn DATE NOT NULL  default GETDATE(),               -- Ngày check-in
     NgayCheckOut DATE,                       -- Ngày check-out (có thể NULL nếu chưa thanh toán)
     FOREIGN KEY (MaBan) REFERENCES Ban(MaBan) -- Liên kết với bảng Ban
 );
