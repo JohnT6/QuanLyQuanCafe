@@ -84,7 +84,7 @@ namespace QuanLyQuanCafe
                     btn.Click += Btn_Click;
                     btn.Tag = row["MaBan"];
                     btn.ForeColor = Color.White;
-                    btn.Font = new Font("Arial", 10, FontStyle.Bold); // Set font to support Vietnamese characters
+                    btn.Font = new Font("Arial", 10, FontStyle.Bold); // Chỉnh Font hỗ trợ tiếng Việt
 
                     switch (row["TrangThai"].ToString())
                     {
